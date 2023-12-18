@@ -4,12 +4,10 @@ import dotenv from "dotenv";
 //importing and using config for accessing dotenv variable connectionString
 dotenv.config();
 
-const db=process.env.connectionString;
-
 async function dbConnection(){
     try {
-        //passing the connectionString as db to the MongoClient
-        const client=new MongoClient(db);
+        //passing the connectionString to the MongoClient
+        const client=new MongoClient(process.env.connectionString);
         //connecting database
         await client.connect();
         console.log("Database connected");
