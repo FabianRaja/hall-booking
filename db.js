@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 //importing and using config for accessing dotenv variable connectionString
 dotenv.config();
 
-const db=process.env.connectionString;
+const db="mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.0";
 
 async function dbConnection(){
     try {
