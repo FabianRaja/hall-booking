@@ -1,7 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import { BookingRouter } from "./src/routes/booking.js";
-import router from "./src/routes/index.js";
+import { Router } from "./src/routes/index.js";
 
 //initiating server
 const app=express();
@@ -16,9 +15,7 @@ dotenv.config();
 const PORT=process.env.PORT||9000;
 
 //routes
-app.use("/",router);
-
-app.use("/book",BookingRouter)
+app.use("/",Router);
 
 //listening to the server
 app.listen(PORT,()=>console.log("Server started in Port : "+PORT));
